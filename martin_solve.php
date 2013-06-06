@@ -34,7 +34,7 @@ exit(0);
 
 // Binary search to find the answer.
 function solve($start, $bank, $rounds) {
-    $stop = -1 * $GLOBAL['ITER'];
+    $stop = -1 * $GLOBALS['ITER'];
     $ans  = 2;
     
     // Fees alone will prevent success, don't try solving
