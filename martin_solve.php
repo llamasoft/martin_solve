@@ -1,13 +1,13 @@
 <?php
 
-$FEE  = 0.00; // Flat fee per bet
 $ITER = 24;   // Number of binary search iterations.
 
-if ($argc < 4) { die("ERROR: Expected [START] [BANK] [MIN_ROUND] [MAX_ROUND]\n"); }
+if ($argc < 4) { die("ERROR: Expected START BANK MIN_ROUND MAX_ROUND [FEE]\n"); }
 $start = floatval($argv[1]);
 $bank  = floatval($argv[2]);
 $min   = intval(min($argv[3], $argv[4])); // Maybe they put them in backwards?
 $max   = intval(max($argv[3], $argv[4]));
+$FEE   = (isset($argv[5]) ? floatval($argv[5]) : 0.00);
 if ($min < 1) { die("ERROR: Minimum rounds must be greater than one\n"); }
 
 // Display input info to user
