@@ -1,7 +1,7 @@
 Martingale Solver
 ==================
 
-This is a rudamentary Martingale betting method "solver".
+This is a rudimentary Martingale betting method "solver".
 Given an initial bet amount and a target bankroll, the script will provide the bet multiplicand required to reach the target round number.
 
 
@@ -17,7 +17,7 @@ Example
 -------
 
 Say you're placing a $1 bet and have a $100 bankroll.
-Yout want to know what to multiply your bet by to survive anywhere from 2 to 10 rounds:
+You want to know what to multiply your bet by to survive anywhere from 2 to 10 rounds:
 
     php martin_solve.php 1 100 2 10
 
@@ -54,8 +54,8 @@ Since it's non-trivial to isolate INCREMENT and solve for it, the script uses a 
 Boring Stuff
 ------------
 
-The script also has two constant values that can be menually tweaked.
-* FEE - A flat rate fee per bet.  This is useful for some spplications (bitcoin betting).
+The script also has two constant values that can be manually tweaked.
+* FEE - A flat rate fee per bet.  This is useful for some applications (bitcoin betting).
 * ITER - Number of binary search iterations when solving the geometric sum.
 
 This script will not solve instances where the bet increment is less than 1.  It just doesn't make sense.
