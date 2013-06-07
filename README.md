@@ -25,18 +25,19 @@ You want to know what to multiply your bet by to survive anywhere from 2 to 10 r
     Bank:  100
     Min R: 2
     Max R: 10
+    
+      Rounds   Incr w/ Fees     Min Reward      Final Bet
+    ========================================================
+           2       99.00000        1.01020       99.00000
+           3        9.46243        1.11817       89.53756
+           4        4.24877        1.30781       76.69916
+           5        2.84110        1.54316       65.15429
+           6        2.23439        1.81011       55.69264
+           7        1.90692        2.10263       48.08397
+           8        1.70536        2.41772       41.94760
+           9        1.57019        2.75380       36.95027
+          10        1.47394        3.10999       32.83298
 
-      Rounds   Incr w/ Fees     Min Reward
-    ================================================
-           2       99.00000        1.01020
-           3        9.46243        1.11817
-           4        4.24877        1.30781
-           5        2.84110        1.54316
-           6        2.23439        1.81011
-           7        1.90692        2.10263
-           8        1.70536        2.41772
-           9        1.57019        2.75380
-          10        1.47394        3.10999
 
 The results indicate that in order to survive to exactly round 6, we'd need to multiply our bet by ~2.234 after each loss.  If we lose the 6th round, we're out 100% of our bankroll.
 Also worth noting is the Minimum Reward column.  If the game's payout is _less than_ the minimum reward, making profit on a win is no longer guaranteed.
@@ -55,8 +56,8 @@ Boring Stuff
 ------------
 
 The script also has two values that can be tweaked.
-* FEE (argument) - A flat rate fee per bet.  This is useful for some applications (bitcoin betting).
-* ITER (internal) - Number of binary search iterations when solving the geometric sum.
+* ```FEE``` (argument) - A flat rate fee per bet.  This is useful for some applications (bitcoin betting).
+* ```ITER``` (internal) - Number of binary search iterations when solving the geometric sum.
 
 This script will not solve instances where the bet increment is less than 1.  It just doesn't make sense.
 No matter what this program suggests, there will always be a possibility of losing your entire bankroll.  That's how gambling works.
