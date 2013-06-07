@@ -18,13 +18,13 @@ echo "Max R: $max\n";
 echo "\n";
 
 // Build result table
-printf("%8s %14s %14s\n", "Rounds", "Incr w/ Fees", "Min Reward");
-printf("%s\n", str_repeat("=", 48));
+printf("%8s %14s %14s %14s\n", "Rounds", "Incr w/ Fees", "Min Reward", "Final Bet");
+printf("%s\n", str_repeat("=", 56));
 for ($r = $min; $r <= $max; $r++) {
     $ans = solve($start, $bank, $r);
     
     if ($ans > 1) {
-        printf("%8d %14.5f %14.5f\n", $r, $ans, 1/($ans-1) + 1);
+        printf("%8d %14.5f %14.5f %14.5f\n", $r, $ans, 1/($ans-1) + 1, $start * pow($ans, $r-1) - $GLOBALS['FEE']);
     }
 }
 
